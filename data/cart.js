@@ -28,15 +28,15 @@ function getCartItem(productId) {
   return matchingItem;
 }
 
-export function addToCart(productId){
+export function addToCart(productId,productQuantity){
   let matchingItem = getCartItem(productId);
 
   if(matchingItem){
-    matchingItem.quantity++;
+    matchingItem.quantity += productQuantity;
   }else{
     cart.push({
       productId: productId,
-      quantity: 1,
+      quantity: productQuantity,
       deliveryOptionId: "1" // Default delivery option
     });
   }

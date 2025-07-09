@@ -10,20 +10,6 @@ import {calculateDeliveryDate, deliveryOptions,getDeliveryOption} from '../../da
 import { renderPaymentSummary } from './paymentSummary.js';
 import { renderCheckoutHeader } from './checkoutHeader.js';
 
-//const today = dayjs();
-// let deliveryDate = today.add(7, 'day');
-// console.log(deliveryDate.format('MMMM dddd D'));
-
-// deliveryDate = today.add(1, 'month');
-// console.log(deliveryDate.format('MMMM D'));
-
-// deliveryDate = today.subtract(1, 'month');
-// console.log(deliveryDate.format('MMMM D'));
-
-// console.log(deliveryDate.format('dddd'));
-
-// console.log(isSatSun(deliveryDate));
-
 export function renderOrderSummary() {
 
   let cartSummaryHTML = '';

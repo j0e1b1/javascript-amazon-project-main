@@ -1,7 +1,7 @@
 //put all imports at top
 //for modules to work use live server
 //import { cart as myCart } from '../data/cart.js' avoids naming conflict
-import { cart,addToCart,updateCartQuantity } from '../data/cart.js';
+import { cart,addToCart,updateCartQuantity, findCartQuantity } from '../data/cart.js';
 import { products } from '../data/products.js';
 import { formatCurrecy } from './utils/money.js';
 
@@ -69,7 +69,10 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
   button.addEventListener('click', () => {
     //Conversion from kebab-case to camelCase
     const productId = button.dataset.productId;
-    addToCart(productId);
+    let productQuantity = parseInt(button.closest('.product-container').querySelector('select').value);
+    addToCart(productId,productQuantity);
     updateCartQuantity();
   });
 });
+
+document.querySelector('.js-cart-quantity').innerHTML = findCartQuantity();
